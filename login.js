@@ -1,1 +1,1 @@
-export const login = () => 'v1'
+export const login = () => 'v1+validation'
