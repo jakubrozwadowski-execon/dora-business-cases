@@ -1,0 +1,15 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+jobs:
+  deploy-production:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        run: |
+          echo "releasing $GITHUB_REF_NAME ($GITHUB_SHA) to production"
+          sleep 20
+          if grep -q '^fail=production' deploy.flags 2>/dev/null; then echo 'deploy script failed'; exit 1; fi

@@ -1,0 +1,10 @@
+name: Hotfix
+on:
+  workflow_dispatch:
+jobs:
+  hotfix-prod:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "hotfix $GITHUB_SHA on $GITHUB_REF_NAME" && sleep 15
