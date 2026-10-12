@@ -1,1 +1,1 @@
-export const search = () => 'index'
+export const search = () => 'index+ranking'
