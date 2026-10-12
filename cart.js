@@ -1,1 +1,1 @@
-export const cart = () => 'model'
+export const cart = () => 'model+totals'
