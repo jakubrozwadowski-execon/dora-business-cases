@@ -1,1 +1,1 @@
-export const discount = (x) => x * 0.9 // rounding bug
+export const discount = (x) => Math.round(x * 90) / 100
