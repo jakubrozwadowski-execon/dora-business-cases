@@ -1,0 +1,11 @@
+name: Release web
+on:
+  push:
+    tags: ['web-v*']
+jobs:
+  deploy-web:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "releasing web $GITHUB_REF_NAME ($GITHUB_SHA)" && sleep 20

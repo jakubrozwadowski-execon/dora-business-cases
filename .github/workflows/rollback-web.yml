@@ -1,0 +1,10 @@
+name: Rollback web
+on:
+  workflow_dispatch:
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "rolling web back to $GITHUB_REF_NAME ($GITHUB_SHA)" && sleep 15
